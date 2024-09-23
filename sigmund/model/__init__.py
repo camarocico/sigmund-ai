@@ -33,4 +33,7 @@ def model(sigmund, model, **kwargs):
     if model == 'dummy':
         from ._dummy_model import DummyModel
         return DummyModel(sigmund, **kwargs)
+    if model == 'rug_model':
+        from ._rug_model import LlamaModel
+        return LlamaModel(sigmund, **kwargs)
     raise ValueError(f'Unknown model: {model}')
